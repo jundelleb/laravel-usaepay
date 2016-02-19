@@ -1,0 +1,21 @@
+{
+    "name": "jundelleb/laravel-usaepay",
+    "description": "PHP USAePay Class",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jundelle Boyles",
+            "email": "bondetni@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PhpUsaepay\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "minimum-stability": "dev"
+}
