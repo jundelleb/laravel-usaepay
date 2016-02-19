@@ -2,7 +2,7 @@
 
 namespace PhpUsaepay;
 
-use PhpUsaepay\USAePayServerNotFound;
+use PhpUsaepay\Exceptions\ServerNotFoundException;
 
 class ServerSwitcher
 {
@@ -86,7 +86,7 @@ class ServerSwitcher
 		}
 
 		if( ! $this->active) {
-			throw new USAePayServerNotFound('No active USAePay server found.');
+			throw new ServerNotFoundException('No active USAePay server found.');
 		}
 	}
 

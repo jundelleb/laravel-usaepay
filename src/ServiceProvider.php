@@ -5,7 +5,7 @@ namespace PhpUsaepay;
 use Illuminate\Support\ServiceProvider;
 use PhpUsaepay\Client;
 
-class USAePayServiceProvider extends ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
