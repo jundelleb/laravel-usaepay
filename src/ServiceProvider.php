@@ -16,9 +16,7 @@ class ServiceProvider extends AppServiceProvider
     {
         // Publish a copy of configuration file. This will allow users of your package to easily 
         // override the default configuration options
-        $this->publishes([
-            __DIR__.'/../config/usaepay.php' => config_path('usaepay.php'),
-        ], 'config');
+        $this->package('jundelleb/laravel-usaepay');
     }
 
     /**
@@ -28,8 +26,7 @@ class ServiceProvider extends AppServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/usaepay.php', 'usaepay'
-        );
+        // Register our config
+        $this->app['config']->package('jundelleb/laravel-usaepay', __DIR__.'/../config/usaepay.php');
     }
 }
