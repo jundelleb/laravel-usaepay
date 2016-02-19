@@ -1,6 +1,13 @@
 {
     "name": "jundelleb/laravel-usaepay",
-    "description": "PHP USAePay Class",
+    "description": "A PHP library that allows you to connect to USAePay gateway and run transactions with less configurations needed.",
+    "keywords": [
+        "usaepay",
+        "api",
+        "php",
+        "laravel"
+    ],
+    "homepage": "https://github.com/jundelleb/laravel-usaepay",
     "type": "library",
     "license": "MIT",
     "authors": [
