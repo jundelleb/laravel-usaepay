@@ -65,7 +65,7 @@ class Client
 		$this->sourceKey = $sourceKey;
 		$this->sourcePin = $sourcePin;
 		$this->sandboxMode = $sandboxMode;
-		$this->config = Config::get('usaepay');
+		$this->config = Config::get('usaepay') ?: Config::get('laravel-usaepay::config');
 
 		$options = array_merge($this->defaultOptions(), $options);
 
