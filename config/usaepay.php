@@ -12,14 +12,47 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('USAEPAY_DEBUG', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | USAePay Source Key
+    |--------------------------------------------------------------------------
+    |
+    | Each merchant will be provided with source key as API authentication.
+    |
+    */
+
+    'key' => env('USAEPAY_KEY'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | USAePay Pin (optional)
+    |--------------------------------------------------------------------------
+    |
+    | Sometimes the source key is paired with pin for more secured auth.
+    |
+    */
+
+    'pin' => env('USAEPAY_PIN'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Environment Mode
+    |--------------------------------------------------------------------------
+    |
+    | Determines whether to use sandbox or live usaepay connection.
+    |
+    */
+
+    'sandbox' => env('USAEPAY_SANDBOX', false),
 
     /*
     |--------------------------------------------------------------------------
     | USAePay Servers
     |--------------------------------------------------------------------------
     |
-    | Here you may define all server domains.
+    | Here you may define all server endpoints for automatic healthy server switching.
     |
     */
 
@@ -50,7 +83,8 @@ return [
     |
     */
 
-    'wsdl' => '/soap/gate/9FA9CF37/usaepay.wsdl',
+    // 'wsdl' => '/soap/gate/9FA9CF37/usaepay.wsdl',
+    'wsdl' => '/soap/gate/0AE595C1/usaepay.wsdl',
 
     /*
     |--------------------------------------------------------------------------
