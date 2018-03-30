@@ -43,7 +43,7 @@ $usaepay = new \PhpUsaepay\Client($sourcekey, $sourcepin, $sandbox, $options);
 
 ```
 
-Example Usage
+Example
 -------
 
 This package takes care of the creation of `ueSecurityToken`.
