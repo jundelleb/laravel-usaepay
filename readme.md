@@ -36,28 +36,56 @@ $sourcekey = 'your_source_key';
 $sourcepin = 'your_source_pin';
 $sandbox = true;
 $options = [
-    'debug' = true,
+    'debug' => true,
 ];
 
 $usaepay = new \PhpUsaepay\Client($sourcekey, $sourcepin, $sandbox, $options);
 
 ```
 
-Example
+Example Usage
 -------
 
 This package takes care of the creation of `ueSecurityToken`.
 
-Example usage for retrieving CustNum.
+### Find CustNum using `searchCustomerID` method
 
 ```php
 <?php
 
 $custID = '21021';
 
-$customer = $usaepay->searchCustomerID($custID);
+$custNum = $usaepay->searchCustomerID($custID);
 
 ```
+Reference: https://wiki.usaepay.com/developer/soap-1.6/methods/searchcustomerid
+
+### Run sale using `runTransaction` method
+
+```php
+<?php
+
+$request = [
+	'Command' => 'sale',
+    'AccountHolder' => 'John Doe',
+    'Details' => [
+      'Description' => 'Example Transaction',
+      'Amount' => '4.00',
+      'Invoice' => '44539'
+    ],
+    'CreditCardData' => [
+      'CardNumber' => '4444555566667779',
+      'CardExpiration' => '0919',
+      'AvsStreet' => '1234 Main Street',
+      'AvsZip' => '99281',
+      'CardCode' => '999'
+    ]
+];
+
+$result = $usaepay->runTransaction($request);
+
+```
+Reference: https://wiki.usaepay.com/developer/soap-1.6/methods/runtransaction
 
 Refer to this link for the complete lists of methods:
 http://wiki.usaepay.com/developer/soap-1.4/Support#methods
