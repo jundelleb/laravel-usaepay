@@ -2,10 +2,10 @@
 
 namespace PhpUsaepay;
 
-use PhpUsaepay\ServerSwitcher;
-use SoapClient;
 use Config;
 use Exception;
+use SoapClient;
+use PhpUsaepay\ServerSwitcher;
 
 class Client
 {
@@ -60,12 +60,20 @@ class Client
 	 * @param array $options
 	 *
 	 */
-	public function __construct($sourceKey, $sourcePin, $sandboxMode = false, $options = array())
+	public function __construct($sourceKey = null, $sourcePin = null, $sandboxMode = false, $options = array())
 	{
+		$this->config = Config::get('usaepay');
+		// When no arguments or atleast sourcekey is not being passed,
+		// let's assume the default in config file
+		if (is_null($sourceKey) || func_num_args() == 0) {
+			$sourceKey = $this->config['key'];
+			$sourcePin = $this->config['pin'];
+			$sandboxMode = $this->config['sandbox'];
+		}
+
 		$this->sourceKey = $sourceKey;
 		$this->sourcePin = $sourcePin;
 		$this->sandboxMode = $sandboxMode;
-		$this->config = Config::get('usaepay');
 
 		$options = array_merge($this->defaultOptions(), $options);
 
