@@ -48,7 +48,7 @@ Example Usage
 
 This package takes care of the creation of `ueSecurityToken`.
 
-### Find CustNum using `searchCustomerID` method
+#### Find CustNum using `searchCustomerID` method
 
 ```php
 <?php
@@ -60,13 +60,13 @@ $custNum = $usaepay->searchCustomerID($custID);
 ```
 Reference: https://wiki.usaepay.com/developer/soap-1.6/methods/searchcustomerid
 
-### Run sale using `runTransaction` method
+#### Run sale using `runTransaction` method
 
 ```php
 <?php
 
 $request = [
-	'Command' => 'sale',
+    'Command' => 'sale',
     'AccountHolder' => 'John Doe',
     'Details' => [
       'Description' => 'Example Transaction',
@@ -88,4 +88,4 @@ $result = $usaepay->runTransaction($request);
 Reference: https://wiki.usaepay.com/developer/soap-1.6/methods/runtransaction
 
 Refer to this link for the complete lists of methods:
-http://wiki.usaepay.com/developer/soap-1.4/Support#methods
+http://wiki.usaepay.com/developer/soap-1.6/Support#methods
