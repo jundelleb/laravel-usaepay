@@ -83,7 +83,6 @@ return [
     |
     */
 
-    // 'wsdl' => '/soap/gate/9FA9CF37/usaepay.wsdl',
     'wsdl' => '/soap/gate/0AE595C1/usaepay.wsdl',
 
     /*
