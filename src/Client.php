@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Support\Arr;
 use SoapClient;
 use PhpUsaepay\ServerSwitcher;
+use Illuminate\Support\Arr;
 
 class Client
 {
