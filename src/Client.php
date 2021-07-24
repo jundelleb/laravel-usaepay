@@ -6,6 +6,7 @@ use Config;
 use Exception;
 use SoapClient;
 use PhpUsaepay\ServerSwitcher;
+use Illuminate\Support\Arr;
 
 class Client
 {
@@ -138,13 +139,13 @@ class Client
     public function domain()
     {
     	if($this->sandboxMode) {
-    		$servers = array_only($this->config['server'], 'sandbox');
+    		$servers = Arr::only($this->config['server'], 'sandbox');
     		$switcher = new ServerSwitcher($servers);
 
     		return $switcher->activeDomain();
     	}
 
-    	$servers = array_except($this->config['server'], 'sandbox');
+    	$servers = Arr::except($this->config['server'], 'sandbox');
     	$switcher = new ServerSwitcher($servers);
 
     	return $switcher->activeDomain();
